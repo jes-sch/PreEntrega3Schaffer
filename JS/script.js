@@ -34,9 +34,9 @@ function calcular() {
     let mejorOpcion;
 
     if (precioContado>precioCuotasAjustado) {
-        mejorOpcion = "Te conviene comprar en cuotas";
+        mejorOpcion = "Te conviene comprar EN CUOTAS";
     }else{
-        mejorOpcion = "Te conviene comprar al contado";
+        mejorOpcion = "Te conviene comprar AL CONTADO";
     }
 
     //Creo mi objeto resultadosFinales:
@@ -51,13 +51,13 @@ function calcular() {
         cuotas: arrayCuotas,
     };
 
-    //TO DO: Agregar el texto que se muestra antes del valor:
+    //MODAL: muestro los resultados finales en un modal:
 
     resultadosFinales1Element.innerHTML = resultadosFinales.mejorOpcion;
-    resultadosFinales2Element.innerHTML = resultadosFinales.cuotaAjustadaHoy;
-    resultadosFinales3Element.innerHTML = resultadosFinales.precioContado;
-    resultadosFinales4Element.innerHTML = resultadosFinales.precioCuotas;
-    resultadosFinales5Element.innerHTML = resultadosFinales.cuotas;
+    resultadosFinales2Element.innerHTML = "Sumatoria de las cuotas ajustadas a valor de hoy: " +resultadosFinales.cuotaAjustadaHoy;
+    resultadosFinales3Element.innerHTML = "Precio contado: " +resultadosFinales.precioContado;
+    resultadosFinales4Element.innerHTML = "Precio cuotas: " +resultadosFinales.precioCuotas;
+    resultadosFinales5Element.innerHTML = "Monto de cada cuota: " +resultadosFinales.cuotas;
 
     //TO DO: recorrer cada item de cuotas, para mostrarlo como columna:
 
@@ -67,9 +67,9 @@ function calcular() {
     }
 }
 
-function RecuperarUltimo(){
+/* function RecuperarUltimo(){
     inputPrecioContado.value = recuperareStorage("precioContado");
-}
+} */
 
 //Guardo en Storage:
 
@@ -89,6 +89,6 @@ btnCalcular.addEventListener('click', () => {
     calcular();
 });
 
-btnRecuperarUltimo.addEventListener('click', () => {
+/* btnRecuperarUltimo.addEventListener('click', () => {
     RecuperarUltimo();
-});
+}); */
