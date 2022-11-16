@@ -4,6 +4,7 @@ resultadosFinales2Element = document.getElementById("ResultadosFinales2"),
 resultadosFinales3Element = document.getElementById("ResultadosFinales3"),
 resultadosFinales4Element = document.getElementById("ResultadosFinales4"),
 resultadosFinales5Element = document.getElementById("ResultadosFinales5"),
+resultadosFinales6Element = document.getElementById("ResultadosFinales6"),
 btnRecuperarUltimo = document.getElementById("btnCalcular"),
 inputPrecioContado = document.getElementById("inputPrecioContado");
 
@@ -55,18 +56,21 @@ function calcular() {
 
     resultadosFinales1Element.innerHTML = resultadosFinales.mejorOpcion;
     resultadosFinales2Element.innerHTML = "Sumatoria de las cuotas ajustadas a valor de hoy: " +resultadosFinales.cuotaAjustadaHoy.toFixed(2);
-    resultadosFinales3Element.innerHTML = "Precio contado: " +resultadosFinales.precioContado;
-    resultadosFinales4Element.innerHTML = "Precio cuotas: " +resultadosFinales.precioCuotas;
+    resultadosFinales3Element.innerHTML = "Precio contado: " + resultadosFinales.precioContado;
+    resultadosFinales4Element.innerHTML = "Precio cuotas: " + resultadosFinales.precioCuotas;
     resultadosFinales5Element.innerHTML = "Monto de cada cuota: " +resultadosFinales.cuotas;
+    for (let i = 0; i < resultadosFinales.cuotas.length; i++) {
+        resultadosFinales6Element.innerHTML += `<br><br> Cuota N°  ${i + 1} : $ ${resultadosFinales.cuotas[i].toFixed(2)}`;
+    }
 
     // TO DO: recorrer cada item de cuotas, para mostrarlo como columna:
 
-    for (let i = 0; i < resultadosFinales.cuotas.length; i++) {
+/*     for (let i = 0; i < resultadosFinales.cuotas.length; i++) {
         const cuota = resultadosFinales.cuotas[i];
         const cuotasAMostrar = i+1;
 
         alert("Cuota N° " + cuotasAMostrar + " = $ " +(cuota.toFixed(2)));
-    }
+    } */
 }
 
     // Guardo en Storage:
