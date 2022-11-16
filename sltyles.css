@@ -35,6 +35,11 @@ h2{
     display: inline-block;
 }
 
+span{
+    color: #33ef37;
+    text-shadow: 3px 3px 3px white;
+}
+
 .form-label{
     margin-left: 20px;
     margin-right: 20px;
