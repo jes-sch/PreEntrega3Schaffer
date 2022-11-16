@@ -19,7 +19,7 @@ function calcular() {
     guardarEnStorage("inflacion",inflacion);
     guardarEnStorage("cantidadCuotas",cantidadCuotas);
 
-    alert(recuperareStorage("cantidadCuotas"));
+    // alert(recuperareStorage("cantidadCuotas")); ALERT PARA VERIFICAR SI ME ESTÁ TOMANDO LA CANTIDAD DE CUOTAS
 
     const arrayCuotas = [];
 
@@ -39,7 +39,7 @@ function calcular() {
         mejorOpcion = "Te conviene comprar AL CONTADO";
     }
 
-    //Creo mi objeto resultadosFinales:
+    // Creo mi OBJETO resultadosFinales:
 
     const resultadosFinales = {
         mejorOpcion: mejorOpcion,
@@ -51,7 +51,7 @@ function calcular() {
         cuotas: arrayCuotas,
     };
 
-    //MODAL: muestro los resultados finales en un modal:
+    // MODAL: muestro los resultadosFinales mediante un modal:
 
     resultadosFinales1Element.innerHTML = resultadosFinales.mejorOpcion;
     resultadosFinales2Element.innerHTML = "Sumatoria de las cuotas ajustadas a valor de hoy: " +resultadosFinales.cuotaAjustadaHoy;
@@ -59,36 +59,29 @@ function calcular() {
     resultadosFinales4Element.innerHTML = "Precio cuotas: " +resultadosFinales.precioCuotas;
     resultadosFinales5Element.innerHTML = "Monto de cada cuota: " +resultadosFinales.cuotas;
 
-    //TO DO: recorrer cada item de cuotas, para mostrarlo como columna:
+    // TO DO: recorrer cada item de cuotas, para mostrarlo como columna:
 
     for (let i = 0; i < resultadosFinales.cuotas.length; i++) {
         const cuota = resultadosFinales.cuotas[i];
-        alert(cuota);
+        alert("Cuota N° " + "(número de cuota) - " + " $ " +(cuota));
+        // alert(cuota); ALERT PARA VER SI ME DEVUELVE EL VALOR DE CADA CUOTA EN CADA VUELTA
     }
 }
 
-/* function RecuperarUltimo(){
-    inputPrecioContado.value = recuperareStorage("precioContado");
-} */
+    // Guardo en Storage:
 
-//Guardo en Storage:
-
-function guardarEnStorage(key, value) {
-    localStorage.setItem(key, value);
-    sessionStorage.setItem(key,value);
+    function guardarEnStorage(key, value) {
+        localStorage.setItem(key, value);
+        sessionStorage.setItem(key,value);
 }
 
-//Recupero del Storage:
+    // Recupero del Storage:
 
-function recuperareStorage(key) {
-    return localStorage.getItem(key);
+    function recuperareStorage(key) {
+        return localStorage.getItem(key);
     //return sessionStorage.getItem(key);
 }
 
-btnCalcular.addEventListener('click', () => {
-    calcular();
-});
-
-/* btnRecuperarUltimo.addEventListener('click', () => {
-    RecuperarUltimo();
-}); */
+    btnCalcular.addEventListener('click', () => {
+        calcular();
+    });
