@@ -64,6 +64,18 @@ function calcular() {
         resultadosFinales6Element.innerHTML += `<br> Cuota N° ${i + 1} : $ ${resultadosFinales.cuotas[i].toFixed(2)}`;
     }
 
+    // VALIDACIÓN:
+
+    if (precioContado == "" || precioCuotas == "" || inflacion == "" || cantidadCuotas == "") {
+        alert("Debés cargar todos los datos para poder CALCULAR los resultados");
+        } else {
+        
+        guardarEnStorage("precioContado", precioContado);
+        guardarEnStorage("precioCuotas", precioCuotas);
+        guardarEnStorage("inflacion", inflacion);
+        guardarEnStorage("cantidadCuotas", cantidadCuotas);
+        }
+
 }
 
     // Guardo en Storage:
