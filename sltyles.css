@@ -101,6 +101,13 @@ span{
     text-transform: uppercase;
 }
 
+#ResultadosFinales6{
+    margin-top: 20px;
+    color: #FF2FEF;
+    text-decoration: underline solid 2px;
+    text-transform: uppercase;
+}
+
 .btn-secondary{
     margin-top: 20px;
     margin-left: 20px;

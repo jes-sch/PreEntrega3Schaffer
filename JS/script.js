@@ -59,10 +59,11 @@ function calcular() {
     resultadosFinales3Element.innerHTML = "Precio contado: " + resultadosFinales.precioContado;
     resultadosFinales4Element.innerHTML = "Precio cuotas: " + resultadosFinales.precioCuotas;
     resultadosFinales5Element.innerHTML = "Monto de cada cuota: " + (precioContado / cantidadCuotas).toFixed(2);
+    resultadosFinales6Element.innerHTML = "<h5>Cuotas ajustadas por la inflación acumulada mes a mes:</h5>"
     for (let i = 0; i < resultadosFinales.cuotas.length; i++) {
-        resultadosFinales6Element.innerHTML += `<br><br> Cuota N°  ${i + 1} : $ ${resultadosFinales.cuotas[i].toFixed(2)}`;
+        resultadosFinales6Element.innerHTML += `<br> Cuota N° ${i + 1} : $ ${resultadosFinales.cuotas[i].toFixed(2)}`;
     }
-    
+
 }
 
     // Guardo en Storage:
