@@ -58,19 +58,11 @@ function calcular() {
     resultadosFinales2Element.innerHTML = "Sumatoria de las cuotas ajustadas a valor de hoy: " +resultadosFinales.cuotaAjustadaHoy.toFixed(2);
     resultadosFinales3Element.innerHTML = "Precio contado: " + resultadosFinales.precioContado;
     resultadosFinales4Element.innerHTML = "Precio cuotas: " + resultadosFinales.precioCuotas;
-    resultadosFinales5Element.innerHTML = "Monto de cada cuota: " +resultadosFinales.cuotas;
+    resultadosFinales5Element.innerHTML = "Monto de cada cuota: " + (precioContado / cantidadCuotas).toFixed(2);
     for (let i = 0; i < resultadosFinales.cuotas.length; i++) {
         resultadosFinales6Element.innerHTML += `<br><br> Cuota N°  ${i + 1} : $ ${resultadosFinales.cuotas[i].toFixed(2)}`;
     }
-
-    // TO DO: recorrer cada item de cuotas, para mostrarlo como columna:
-
-/*     for (let i = 0; i < resultadosFinales.cuotas.length; i++) {
-        const cuota = resultadosFinales.cuotas[i];
-        const cuotasAMostrar = i+1;
-
-        alert("Cuota N° " + cuotasAMostrar + " = $ " +(cuota.toFixed(2)));
-    } */
+    
 }
 
     // Guardo en Storage:
@@ -88,5 +80,6 @@ function calcular() {
 }
 
     btnCalcular.addEventListener('click', () => {
+        resultadosFinales6Element.innerHTML = ""
         calcular();
     });
