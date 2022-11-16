@@ -54,7 +54,7 @@ function calcular() {
     // MODAL: muestro los resultadosFinales mediante un modal:
 
     resultadosFinales1Element.innerHTML = resultadosFinales.mejorOpcion;
-    resultadosFinales2Element.innerHTML = "Sumatoria de las cuotas ajustadas a valor de hoy: " +resultadosFinales.cuotaAjustadaHoy;
+    resultadosFinales2Element.innerHTML = "Sumatoria de las cuotas ajustadas a valor de hoy: " +resultadosFinales.cuotaAjustadaHoy.toFixed(2);
     resultadosFinales3Element.innerHTML = "Precio contado: " +resultadosFinales.precioContado;
     resultadosFinales4Element.innerHTML = "Precio cuotas: " +resultadosFinales.precioCuotas;
     resultadosFinales5Element.innerHTML = "Monto de cada cuota: " +resultadosFinales.cuotas;
@@ -63,8 +63,9 @@ function calcular() {
 
     for (let i = 0; i < resultadosFinales.cuotas.length; i++) {
         const cuota = resultadosFinales.cuotas[i];
-        alert("Cuota N° " + "(número de cuota) - " + " $ " +(cuota));
-        // alert(cuota); ALERT PARA VER SI ME DEVUELVE EL VALOR DE CADA CUOTA EN CADA VUELTA
+        const cuotasAMostrar = i+1;
+
+        alert("Cuota N° " + cuotasAMostrar + " = $ " +(cuota.toFixed(2)));
     }
 }
 
@@ -79,7 +80,7 @@ function calcular() {
 
     function recuperareStorage(key) {
         return localStorage.getItem(key);
-    //return sessionStorage.getItem(key);
+    //return sessionStorage.getItem(key); ESTA LÍNEA LA COMENTO PORQUE NO QUIERO RECUPERAR DEL SESSION
 }
 
     btnCalcular.addEventListener('click', () => {
